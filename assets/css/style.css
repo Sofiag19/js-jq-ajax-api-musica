@@ -52,7 +52,7 @@ header img {
 }
 
 .cd h3 {
-    margin: 20px 0;
+    margin: 10px 0;
     color: white;
     font-size: 22px;
     text-transform: uppercase;
@@ -65,4 +65,8 @@ header img {
 
 .cd span.year {
     color: grey;
+}
+
+.cd span.genre {
+  color: grey;
 }
