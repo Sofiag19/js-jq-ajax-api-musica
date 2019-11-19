@@ -18,9 +18,18 @@ $(document).ready(function() {
 
       success : function (thumb) {
         var thumbOk = thumb.response;
+        var copiaTempl = $("#hb-template").html();
+        var templReady = Handlebars.compile(copiaTempl);
           for (var variable in thumbOk) {
             console.log(thumbOk[variable]);
             }
+          for (var i = 0; i < thumbOk.length; i++) {
+            console.log(thumbOk[i].poster, thumbOk[i].title,);
+            var createObj = {img: thumbOk[i].poster, title : thumbOk[i].title, author: thumbOk[i].author, year : thumbOk[i].year, genere : thumbOk[i].genre };
+            var createEl = templReady(createObj);
+            var where = $(".cds-container");
+            where.append(createEl);
+          }
       },
 
       error : function (errore) {
@@ -28,12 +37,6 @@ $(document).ready(function() {
       }
     });
 
-    // var copiaTempl = $("#hb-template").html();
-    // var templReady = Handlebars.compile(copiaTempl);
-    // var createObj = {};
-    // var createEl = templReady(createObj);
-    // var where = $(".now_chat.play");
-    // where.append(createEl);
 
 
 });
