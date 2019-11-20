@@ -29,19 +29,16 @@ $(document).ready(function() {
           //   }
 
           for (var i = 0; i < thumbOk.length; i++) {
-            var createObj = { img: thumbOk[i].poster,
-                              title : thumbOk[i].title,
-                              author: thumbOk[i].author,
-                              year : thumbOk[i].year,
-                              genere : thumbOk[i].genre
-                            };
-
-            var createEl = templReady(createObj);
+            var createEl = templReady({img: thumbOk[i].poster,
+                                      title : thumbOk[i].title,
+                                      author: thumbOk[i].author,
+                                      year : thumbOk[i].year,
+                                      genere : thumbOk[i].genre
+                                      });
 
             var where = $(".cds-container");
 
             where.append(createEl);
-            
           }
       },
 
